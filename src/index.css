@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Plus Jakarta Sans', 'Manrope', system-ui, sans-serif;
+  }
+
+  .font-mono, .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+}
+
+@keyframes nexus-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes nexus-float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.animate-nexus-float {
+  animation: nexus-float 6s ease-in-out infinite;
+}
+
+.animate-nexus-float-delayed {
+  animation: nexus-float-delayed 7.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-nexus-float,
+  .animate-nexus-float-delayed {
+    animation: none;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(119, 119, 137, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(119, 119, 137, 0.45);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

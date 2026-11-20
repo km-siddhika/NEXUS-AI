@@ -1,0 +1,6 @@
+{
+  "name": "NEXUS AI",
+  "description": "Turn real-world problems into intelligent, actionable innovations. An AI innovation and project execution workspace for researchers, developers, and hackathon teams.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

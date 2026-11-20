@@ -1,0 +1,514 @@
+{
+  "users": [
+    {
+      "id": "usr_ad0685eb55c6",
+      "name": "Alex Rivera",
+      "email": "judge@nexus-demo.ai",
+      "institution": "NEXUS Innovation Lab",
+      "role": "Hackathon Lead",
+      "avatarColor": "#7955E8",
+      "avatarInitials": "AR",
+      "themePreference": "light",
+      "notificationsEnabled": true,
+      "aiDepthPreference": "balanced",
+      "isDemo": true,
+      "passwordHash": "37ab412d8b0f0e70d6ed3e468d27820d94ecb5ce0c8adc56e8e16c7e3e1faa4f326f23d5a51d7793e87d36c8f09e255092968ecf3f32ac76944a41f1bc1f2fb4",
+      "passwordSalt": "cb21fd4ef0d08c018625bbb00ab38610",
+      "createdAt": "2026-11-20T12:57:52.345Z"
+    },
+    {
+      "id": "usr_679d8fe5f2c3",
+      "name": "Test User",
+      "email": "test_1795179472402@example.edu",
+      "institution": "",
+      "role": "Researcher",
+      "avatarColor": "#F47BA7",
+      "avatarInitials": "TU",
+      "themePreference": "light",
+      "notificationsEnabled": true,
+      "aiDepthPreference": "balanced",
+      "isDemo": false,
+      "passwordHash": "39294e19373acfbbbd0397194903a6d84de5c99a564fe549114bf186215567e2463fc3f50538f20c417ffb416e621afd4a4605fdb7fa548beed29215a61fea07",
+      "passwordSalt": "fb7c89a2dc1c4f6bf4260d11d8470db5",
+      "createdAt": "2026-11-20T12:57:52.566Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "2dcf9e012301e1c980cff3dec811e95362c02a8b81b9bd86eb3796f3a6dc4e81",
+      "userId": "usr_ad0685eb55c6",
+      "expiresAt": "2026-12-04T12:57:52.348Z"
+    },
+    {
+      "token": "3d104d668c4c1a9d6f0c4b2c9d5ec21819f7ce569e78004935be00309fb3542e",
+      "userId": "usr_679d8fe5f2c3",
+      "expiresAt": "2026-12-04T12:57:52.567Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_4aaab332fae7",
+      "ownerId": "usr_ad0685eb55c6",
+      "teamId": "team_8749035ebc1d",
+      "title": "Urban Heat-Island Microclimate Mesh",
+      "domain": "Environment",
+      "status": "In Progress",
+      "archived": false,
+      "bookmarked": true,
+      "description": "Low-cost solar LoRaWAN sensor nodes paired with shade-canopy routing to alert vulnerable neighborhoods before dangerous urban heat peaks.",
+      "targetAudience": "Municipal climate planners and elderly residents in dense urban wards",
+      "supportingInfo": "Pilot ward shows 4.2°C variance between shaded parks and asphalt transit corridors.",
+      "coverTheme": "cyan",
+      "progress": 68,
+      "selectedSolutionId": "sol_7e8318cec982",
+      "problemAnalysis": {
+        "summary": "Dense urban districts lack hyper-local thermal telemetry, causing city cooling centers and shade transit advisories to activate hours after street-level heat stress peaks.",
+        "refinedStatement": "How might municipal health teams capture block-level wet-bulb temperature gradients in real time to dispatch mobile cooling resources before heat-related hospitalizations spike?",
+        "rootCauses": [
+          "Weather stations sit at airports miles away from asphalt-heavy residential corridors",
+          "Commercial microclimate sensors cost $1,200+ per node, preventing block-level coverage",
+          "Cooling center alerts rely on static daily forecasts rather than real-time pedestrian exposure"
+        ],
+        "stakeholders": [
+          "Older adults and outdoor transit commuters",
+          "Municipal public health & emergency response coordinators",
+          "Urban forestry and streetscape planning departments"
+        ],
+        "currentChallenges": [
+          "Battery degradation inside unshaded solar enclosures above 45°C",
+          "Zero-connectivity dead zones along concrete underpasses",
+          "Communicating actionable cool-route alerts without smartphone dependency"
+        ],
+        "possibleImpact": [
+          "Earlier activation of neighborhood cooling hubs during peak afternoon humidity",
+          "Empirical street-level heat maps to prioritize urban tree canopy funding"
+        ],
+        "researchQuestions": [
+          "What node spacing (250m vs 500m) yields reliable interpolation across mixed-height blocks?",
+          "How can community pharmacies act as passive LoRaWAN gateway hosts?"
+        ],
+        "missingInformation": [
+          "Historical ward-level EMS heat dispatch timestamps for baseline validation",
+          "Local municipal permitting rules for streetlight pole mounting"
+        ],
+        "opportunities": [
+          "Combine passive radiative-cooling enclosures with sub-GHz mesh relays",
+          "Publish open GeoJSON heat feeds for local transit routing apps"
+        ],
+        "updatedAt": "2026-11-19T12:57:52.346Z"
+      },
+      "solutions": [
+        {
+          "id": "sol_7e8318cec982",
+          "name": "Solar LoRaWAN Mesh + Community Pharmacy Gateways",
+          "shortDescription": "Self-powered ESP32-S3 + SHT45 sensor pucks mounted on transit shelters relaying hourly thermal deltas through neighborhood pharmacy gateways.",
+          "workingPrinciple": "Sensors wake every 5 minutes, sample temperature, humidity, and solar irradiance, and transmit compressed 18-byte payloads via LoRaWAN to a cloud ingestion pipeline.",
+          "requiredTechnologies": [
+            "ESP32-S3",
+            "SX1262 LoRa",
+            "SHT45 Sensor",
+            "TimescaleDB",
+            "MapLibre GL"
+          ],
+          "estimatedComplexity": "Medium",
+          "potentialImpact": "Transformative",
+          "advantages": [
+            "Under $38 bill of materials per street node in small batches",
+            "Zero cellular SIM fees via community-hosted gateways",
+            "Operates up to 14 days on LiFePO4 reserve without direct sun"
+          ],
+          "limitations": [
+            "Requires mounting permission from transit authority or local storefronts",
+            "Line-of-sight attenuation in high-rise canyons"
+          ],
+          "risks": [
+            "Enclosure thermal drift if radiation shield airflow is obstructed",
+            "Vandalism if mounted below 3 meters"
+          ],
+          "isEstimate": true
+        },
+        {
+          "id": "sol_72d51f7c7d16",
+          "name": "Fleet-Mounted Transit Bus Thermal Probes",
+          "shortDescription": "Attach ruggedized thermal-GPS loggers to municipal buses to map street corridors dynamically throughout service hours.",
+          "workingPrinciple": "Buses sweep major arterials every 15 minutes, uploading geo-tagged temperature traces over existing onboard cellular routers.",
+          "requiredTechnologies": [
+            "CAN-bus Logger",
+            "PT1000 Probe",
+            "PostGIS",
+            "MQTT"
+          ],
+          "estimatedComplexity": "Low",
+          "potentialImpact": "High",
+          "advantages": [
+            "Instant multi-ward spatial coverage without fixed pole permits",
+            "Direct access to reliable 24V vehicle power"
+          ],
+          "limitations": [
+            "Measures roadway asphalt corridors rather than residential courtyards",
+            "Engine heat skews readings at low speeds or idling stops"
+          ],
+          "risks": [
+            "Transit union and fleet maintenance scheduling delays"
+          ],
+          "isEstimate": true
+        },
+        {
+          "id": "sol_45041f54298e",
+          "name": "Satellite LST + Citizen SMS Micro-Survey",
+          "shortDescription": "Downscale Landsat/ECOSTRESS thermal imagery with targeted SMS comfort check-ins from community volunteers.",
+          "workingPrinciple": "Combines morning satellite land-surface passes with regression downscaling and hyper-local human comfort reports.",
+          "requiredTechnologies": [
+            "Google Earth Engine",
+            "Python Rasterio",
+            "Twilio SMS",
+            "FastAPI"
+          ],
+          "estimatedComplexity": "Low",
+          "potentialImpact": "Moderate",
+          "advantages": [
+            "Zero hardware manufacturing or maintenance overhead",
+            "Rapid deployment within a single hackathon weekend"
+          ],
+          "limitations": [
+            "Cloud cover blocks thermal satellite passes on humid days",
+            "Land surface temperature differs significantly from shaded air temperature"
+          ],
+          "risks": [
+            "Volunteer survey fatigue during multi-day heat waves"
+          ],
+          "isEstimate": true
+        }
+      ],
+      "roadmapPhases": [
+        {
+          "id": "phase_4175bfd950c2",
+          "title": "Phase 1: Enclosure & Sensor Calibration",
+          "duration": "Weeks 1–2",
+          "objective": "Benchmark SHT45 accuracy inside a passive Stevenson radiation shield against reference lab probes.",
+          "milestones": [
+            "3D-print louvered PETG radiation shield",
+            "Run 48-hour rooftop drift calibration"
+          ],
+          "dependencies": [
+            "BOM hardware procurement"
+          ],
+          "testingRequirements": [
+            "±0.3°C variance check against NIST-traceable thermometer"
+          ],
+          "deliverables": [
+            "Calibrated firmware image",
+            "CAD enclosure STL files"
+          ]
+        },
+        {
+          "id": "phase_a9bd6b2c8504",
+          "title": "Phase 2: Gateway Mesh & Live Heatmap",
+          "duration": "Weeks 3–4",
+          "objective": "Connect 5 pilot nodes to a ChirpStack LoRaWAN server and render ward-level heat advisories.",
+          "milestones": [
+            "Deploy pharmacy gateway node",
+            "Launch live corridor thermal dashboard"
+          ],
+          "dependencies": [
+            "Phase 1 calibrated hardware"
+          ],
+          "testingRequirements": [
+            "Packet delivery rate > 96% across 600m urban blocks"
+          ],
+          "deliverables": [
+            "Ingestion API",
+            "Public ward heat advisory map"
+          ]
+        }
+      ],
+      "pitch": {
+        "projectTitle": "Urban Heat-Island Microclimate Mesh",
+        "problemStatement": "Citywide heat warnings rely on airport weather stations miles away, leaving vulnerable neighborhoods blind to 4°C+ street-level thermal spikes.",
+        "existingLimitations": "Commercial environmental stations cost over $1,200 per unit and require cellular contracts, making block-by-block deployment financially impossible.",
+        "proposedSolution": "A $38 solar-powered LoRaWAN sensor mesh hosted on neighborhood storefronts, streaming live wet-bulb heat alerts and cool-route maps.",
+        "innovation": "Combines ultra-low-power radiative shielding with zero-fee community gateways and automated cooling-center dispatch triggers.",
+        "technologyStack": "ESP32-S3, SX1262 LoRaWAN, SHT45, TimescaleDB, MapLibre GL, React + TypeScript",
+        "implementationPlan": "Phase 1 calibrates 5 pilot nodes; Phase 2 partners with 3 community pharmacies for gateway hosting; Phase 3 integrates municipal SMS alerts.",
+        "expectedImpact": "Gives city health teams 2–3 hours of earlier intervention window and empirical data for targeted shade-tree planting.",
+        "futureScope": "Expand telemetry to particulate air-quality indexing (PM2.5) for wildfire smoke events.",
+        "updatedAt": "2026-11-19T12:57:52.346Z"
+      },
+      "createdAt": "2026-11-06T12:57:52.346Z",
+      "updatedAt": "2026-11-19T12:57:52.346Z"
+    },
+    {
+      "id": "proj_bb94ab440ad6",
+      "ownerId": "usr_ad0685eb55c6",
+      "title": "Tactile STEM Lab Companion for Low-Vision Learners",
+      "domain": "Accessibility",
+      "status": "Planning",
+      "archived": false,
+      "bookmarked": false,
+      "description": "Audio-guided benchtop electronics & chemistry assistant using real-time camera verification and spoken spatial cues for blind and low-vision students.",
+      "targetAudience": "High-school and undergraduate STEM students with visual impairments",
+      "supportingInfo": "Built with university disability resource center advisors.",
+      "coverTheme": "lavender",
+      "progress": 35,
+      "createdAt": "2026-11-11T12:57:52.346Z",
+      "updatedAt": "2026-11-18T12:57:52.346Z"
+    },
+    {
+      "id": "proj_c7b6a6eb6176",
+      "ownerId": "usr_ad0685eb55c6",
+      "title": "Smallholder Soil Moisture & Drip Automation",
+      "domain": "Agriculture",
+      "status": "Completed",
+      "archived": false,
+      "bookmarked": true,
+      "description": "Capacitive root-zone moisture sensing and gravity-fed solenoid valve scheduler designed to cut smallholder irrigation water waste.",
+      "targetAudience": "Small-acreage vegetable cooperatives in semi-arid regions",
+      "supportingInfo": "Field-tested across 2 cooperative greenhouses over a 6-week growing cycle.",
+      "coverTheme": "coral",
+      "progress": 100,
+      "createdAt": "2026-10-21T12:57:52.346Z",
+      "updatedAt": "2026-11-16T12:57:52.346Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_4913493220fd",
+      "projectId": "proj_4aaab332fae7",
+      "ownerId": "usr_ad0685eb55c6",
+      "title": "Validate SHT45 radiation shield airflow",
+      "description": "Compare shaded vs direct-sun enclosure readings over 48 hours on campus roof.",
+      "status": "Done",
+      "priority": "High",
+      "deadline": "2026-11-22",
+      "assigneeName": "Alex Rivera",
+      "createdAt": "2026-11-14T12:57:52.346Z",
+      "updatedAt": "2026-11-18T12:57:52.346Z"
+    },
+    {
+      "id": "task_1741e55a9894",
+      "projectId": "proj_4aaab332fae7",
+      "ownerId": "usr_ad0685eb55c6",
+      "title": "Configure ChirpStack LoRaWAN payload decoder",
+      "description": "Write compact binary decoder for 18-byte temperature, RH, and battery voltage frames.",
+      "status": "In Progress",
+      "priority": "High",
+      "deadline": "2026-11-25",
+      "assigneeName": "Maya Lin",
+      "createdAt": "2026-11-16T12:57:52.346Z",
+      "updatedAt": "2026-11-19T12:57:52.346Z"
+    },
+    {
+      "id": "task_5321ec129798",
+      "projectId": "proj_4aaab332fae7",
+      "ownerId": "usr_ad0685eb55c6",
+      "title": "Draft municipal streetlight mounting brief",
+      "description": "Prepare 2-page safety and non-invasive zip-tie clamp spec for city review.",
+      "status": "Todo",
+      "priority": "Medium",
+      "deadline": "2026-11-29",
+      "assigneeName": "Alex Rivera",
+      "createdAt": "2026-11-18T12:57:52.346Z",
+      "updatedAt": "2026-11-18T12:57:52.346Z"
+    },
+    {
+      "id": "task_8a3c9ad8d4cd",
+      "projectId": "proj_bb94ab440ad6",
+      "ownerId": "usr_ad0685eb55c6",
+      "title": "Interview 4 accessibility lab instructors",
+      "description": "Document top 5 breadboard & multimeter verification bottlenecks during lab hours.",
+      "status": "In Progress",
+      "priority": "High",
+      "deadline": "2026-11-24",
+      "assigneeName": "Alex Rivera",
+      "createdAt": "2026-11-15T12:57:52.346Z",
+      "updatedAt": "2026-11-18T12:57:52.346Z"
+    },
+    {
+      "id": "task_355ad59515f8",
+      "projectId": "proj_c7b6a6eb6176",
+      "ownerId": "usr_ad0685eb55c6",
+      "title": "Publish open-source PCB & valve BOM",
+      "description": "Finalize KiCad schematics and waterproof silicone potting instructions.",
+      "status": "Done",
+      "priority": "Medium",
+      "deadline": "2026-11-18",
+      "assigneeName": "Alex Rivera",
+      "createdAt": "2026-11-08T12:57:52.346Z",
+      "updatedAt": "2026-11-16T12:57:52.346Z"
+    }
+  ],
+  "teams": [
+    {
+      "id": "team_8749035ebc1d",
+      "ownerId": "usr_ad0685eb55c6",
+      "name": "Civic Climate Lab",
+      "description": "Interdisciplinary hardware + urban informatics squad tackling extreme urban heat.",
+      "members": [
+        {
+          "id": "usr_ad0685eb55c6",
+          "name": "Alex Rivera",
+          "email": "judge@nexus-demo.ai",
+          "role": "Lead",
+          "status": "Active",
+          "joinedAt": "2026-11-06T12:57:52.346Z"
+        },
+        {
+          "id": "mem_2e7e019da3f4",
+          "name": "Maya Lin",
+          "email": "maya.lin@example.edu",
+          "role": "Engineer",
+          "status": "Active",
+          "joinedAt": "2026-11-08T12:57:52.346Z"
+        },
+        {
+          "id": "mem_2fe4ef58742a",
+          "name": "Arjun Patel",
+          "email": "arjun.p@example.edu",
+          "role": "Researcher",
+          "status": "Active",
+          "joinedAt": "2026-11-10T12:57:52.346Z"
+        }
+      ],
+      "projectIds": [
+        "proj_4aaab332fae7"
+      ],
+      "createdAt": "2026-11-06T12:57:52.346Z",
+      "updatedAt": "2026-11-19T12:57:52.346Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "cmt_76b435fa107b",
+      "projectId": "proj_4aaab332fae7",
+      "teamId": "team_8749035ebc1d",
+      "authorId": "usr_ad0685eb55c6",
+      "authorName": "Alex Rivera",
+      "authorRole": "Lead",
+      "content": "Rooftop shield test held within 0.25°C of reference probe even at 2 PM peak sun.",
+      "createdAt": "2026-11-18T12:57:52.346Z"
+    },
+    {
+      "id": "cmt_1ba84e8a4ba8",
+      "projectId": "proj_4aaab332fae7",
+      "teamId": "team_8749035ebc1d",
+      "authorId": "mem_maya",
+      "authorName": "Maya Lin",
+      "authorRole": "Engineer",
+      "content": "Payload decoder is wired up. Next step is confirming gateway range past the concrete overpass.",
+      "createdAt": "2026-11-19T12:57:52.346Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1b26be5d3a2b",
+      "userId": "usr_679d8fe5f2c3",
+      "title": "Project created",
+      "message": "\"Smoke Test Sensor\" is ready in your workspace.",
+      "type": "project",
+      "read": false,
+      "link": "/app/projects/proj_1214602aa266",
+      "createdAt": "2026-11-20T12:57:52.719Z"
+    },
+    {
+      "id": "notif_d43c02748c79",
+      "userId": "usr_679d8fe5f2c3",
+      "title": "Welcome to NEXUS AI",
+      "message": "Start by framing a real-world problem in Discover or creating your first project.",
+      "type": "project",
+      "read": false,
+      "link": "/app/discover",
+      "createdAt": "2026-11-20T12:57:52.567Z"
+    },
+    {
+      "id": "notif_2757e363a0b5",
+      "userId": "usr_ad0685eb55c6",
+      "title": "Solution direction selected",
+      "message": "Solar LoRaWAN Mesh set as primary direction for Urban Heat-Island Microclimate Mesh.",
+      "type": "project",
+      "read": false,
+      "link": "/app/projects/proj_4aaab332fae7",
+      "createdAt": "2026-11-19T12:57:52.346Z"
+    },
+    {
+      "id": "notif_2fa1044d1e4b",
+      "userId": "usr_ad0685eb55c6",
+      "title": "Upcoming task deadline",
+      "message": "Configure ChirpStack LoRaWAN payload decoder is due in 5 days.",
+      "type": "task",
+      "read": false,
+      "link": "/app/projects/proj_4aaab332fae7",
+      "createdAt": "2026-11-19T12:57:52.346Z"
+    }
+  ],
+  "activityLogs": [
+    {
+      "id": "act_db80023ac74b",
+      "userId": "usr_679d8fe5f2c3",
+      "action": "Deleted project",
+      "entityTitle": "Smoke Test Sensor",
+      "category": "project",
+      "createdAt": "2026-11-20T12:57:52.762Z"
+    },
+    {
+      "id": "act_0b48dce3deeb",
+      "userId": "usr_679d8fe5f2c3",
+      "projectId": "proj_1214602aa266",
+      "action": "Created project",
+      "entityTitle": "Smoke Test Sensor",
+      "category": "project",
+      "createdAt": "2026-11-20T12:57:52.719Z"
+    },
+    {
+      "id": "act_b92cb6e92281",
+      "userId": "usr_ad0685eb55c6",
+      "projectId": "proj_4aaab332fae7",
+      "action": "Updated problem brief & pitch outline",
+      "entityTitle": "Urban Heat-Island Microclimate Mesh",
+      "category": "project",
+      "createdAt": "2026-11-19T12:57:52.346Z"
+    },
+    {
+      "id": "act_358e0a637adc",
+      "userId": "usr_ad0685eb55c6",
+      "projectId": "proj_4aaab332fae7",
+      "action": "Completed calibration task",
+      "entityTitle": "Validate SHT45 radiation shield airflow",
+      "category": "task",
+      "createdAt": "2026-11-18T12:57:52.346Z"
+    },
+    {
+      "id": "act_51bc85daa3d3",
+      "userId": "usr_ad0685eb55c6",
+      "projectId": "proj_c7b6a6eb6176",
+      "action": "Marked project completed",
+      "entityTitle": "Smallholder Soil Moisture & Drip Automation",
+      "category": "project",
+      "createdAt": "2026-11-16T12:57:52.346Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep_bb70976d8240",
+      "userId": "usr_ad0685eb55c6",
+      "projectId": "proj_4aaab332fae7",
+      "projectTitle": "Urban Heat-Island Microclimate Mesh",
+      "reportType": "Executive Summary",
+      "title": "Executive Summary — Urban Heat-Island Microclimate Mesh",
+      "sections": [
+        {
+          "heading": "Problem Context",
+          "content": "Airport weather readings routinely underestimate asphalt-corridor street temperatures by 3–5°C, delaying municipal cooling center activations."
+        },
+        {
+          "heading": "Proposed Architecture",
+          "content": "Deploy $38 solar-powered ESP32-S3 LoRaWAN nodes inside passive radiation shields, routing hyper-local wet-bulb telemetry through community pharmacy gateways."
+        },
+        {
+          "heading": "Next Milestone",
+          "content": "Finalize 5-node pilot deployment and integrate live GeoJSON heat advisories with local transit routing."
+        }
+      ],
+      "createdAt": "2026-11-18T12:57:52.346Z"
+    }
+  ]
+}
